@@ -179,11 +179,6 @@ pub struct Iter {
 /// [set of `Value`s added to a `Span`]: super::collect::Collect::record
 /// [`Event`]: super::event::Event
 pub trait Visit {
-    /// Visit a double-precision floating point value.
-    fn record_f64(&mut self, field: &Field, value: f64) {
-        self.record_debug(field, &value)
-    }
-
     /// Visit a signed 64-bit integer value.
     fn record_i64(&mut self, field: &Field, value: i64) {
         self.record_debug(field, &value)
